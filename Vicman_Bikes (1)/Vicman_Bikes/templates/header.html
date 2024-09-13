@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        
+            <img src="{{url_for('static', filename='IMG/logONvICMAN1.png')}}" alt="Logo de Vicmanbikes" class="logo">
+        
+        <div class="container">
+            
+            <nav class="navegacion">
+                
+                <a class="nav-link" href="{{url_for('index_factura')}}">Facturas <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url_for('index_vehiculo')}}">Vehiculos <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url_for('index_clientes')}}">Clientes <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url_for('index_categoria')}}">Categorias <span class="sr-only">(current)</span></a>
+                </nav>
+
+        </div>
+        
+    </header>
+    
+    <div class="container">
+    <br> 
+    

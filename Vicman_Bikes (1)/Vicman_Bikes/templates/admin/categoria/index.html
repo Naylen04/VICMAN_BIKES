@@ -1,0 +1,31 @@
+
+{% include 'header.html' %}
+<br>
+<a href="{{ url_for('create_categoria') }}" class="btn btn-success">Ingresar una nueva categoría</a>
+<br><br>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Id-Categoría</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categoria in categorias %}
+            <tr>
+                <td>{{ categoria[0] }}</td>
+                <td>{{ categoria[1] }}</td>
+                <td>
+                    <a class="btn btn-success" href="/admin/show_categoria/{{categoria[0]}}">Mostrar</a> |
+                    <a class="btn btn-warning" href="/admin/edit_categoria/{{categoria[0]}}">Editar</a> |
+                    <a onclick="return confirm('¿Desea eliminar?')" class="btn btn-danger" href="/admin/destroy_categoria/{{categoria[0]}}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+

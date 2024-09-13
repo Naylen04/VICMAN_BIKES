@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <a href="{{url_for('index_user')}}">
+            <img src="{{url_for('static', filename='IMG/logONvICMAN1.png')}}" alt="Logo de Vicmanbikes" class="logo">
+        </a>
+        <div class="container">
+            
+            <nav class="navegacion">
+                
+                <a href="{{url_for('index_user')}}" style="padding: 15px;">Inicio</a>
+                <a href="https://web.whatsapp.com/send?phone=573108520056" target="_blank"><img width="20px" src="{{ url_for('static', filename='IMG/whatsapp.png') }}" alt=""> Asesor  </a>
+                
+                </nav>
+
+        </div>
+        
+    </header>
+    <div class="productoVistaCompleta">
+      {% for vehiculo in vehiculos %}
+        <img class="imgVistaCompleta"  src="/uploads/{{vehiculo[5]}}">
+        <div class="DescripcionContainer">
+        <ul class="descripcionVistaCompleta">
+          
+            <h1 class="TituloProductoVistaCompleta">{{vehiculo[1]}}</h1>
+            <h3>Descripcion</h3>
+            <li><textarea name="txtDescripcion" id="txtDescripcion" rows="10">{{vehiculo[4]}}</textarea></li>
+            <li>{{vehiculo[2]}}</li>
+            <li>Stock: {{vehiculo[3]}}</li>
+            <br><br><li><a href="https://web.whatsapp.com/send?phone=573108520056" target="_blank"><img width="20px" src="{{ url_for('static', filename='IMG/whatsapp.png') }}" alt=""> Asesor  </a></li>
+            {% endfor %}
+        </ul>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="footer-left">
+          <p>Información de contacto:</p>
+          <ul>
+            <li>Teléfono: 555-555-5555</li>
+            <li>Email: [info@vicmanbikes.com](mailto:info@vicmanbikes.com)</li>
+            <li>Dirección: Av. Principal 123, Ciudad, País</li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <p>Síguenos en las redes sociales:</p>
+
+            <a href="https://www.facebook.com/vicmanbikes" target="_blank"><img src="https://i.pinimg.com/736x/9c/fd/c7/9cfdc754454f1b771f988d577488049c.jpg" alt="Facebook">            </a>
+            <a href="https://twitter.com/vicmanbikes" target="_blank"><img src="https://img.freepik.com/vector-gratis/nuevo-diseno-icono-x-logotipo-twitter-2023_1017-45418.jpg?size=338&ext=jpg" alt="Twitter"></a>
+            <a href="https://www.instagram.com/vicmanbikes" target="_blank"><img src="https://i.pinimg.com/originals/6b/ad/94/6bad94d2ddff437022e076223b4a937c.jpg" alt="Instagram"></a>
+        </div>
+      </footer>
+      
+</body>
+</html>

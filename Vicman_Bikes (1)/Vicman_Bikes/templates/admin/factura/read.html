@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+
+
+<br><br>
+{% for factura in facturas %}
+    
+    <form enctype="multipart/form-data">
+
+        <div class="card">
+            <div class="card-header">
+                Mostrar Factura
+            </div>
+            <div class="card-body">
+                
+                <p class="card-text">
+                    <div class="form-group">
+                        <label for="txtIdfactura">ID Factura:</label>
+                        <input id="txtIdfactura" value="{{factura[0]}}" class="form-control" type="text" name="txtIdfactura" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFecha">Fecha:</label>
+                        <input id="txtFecha" value="{{factura[1]}}" class="form-control" type="text" name="txtFecha" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtIdentificacion">Identificacion:</label>
+                        <input id="txtIdentificacion" value="{{factura[2]}}" class="form-control" type="text" name="txtIdentificacion" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtIdvehiculo">ID Vehiculo:</label>
+                        <input id="txtIdvehiculo" value="{{factura[3]}}" class="form-control" type="text" name="txtIdvehiculo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <a href="{{url_for('index_factura')}}" class="btn btn-primary">Regresar</a>
+                    </div>
+    
+                </p>
+            </div>
+        </div>
+
+       
+    </form>
+
+{% endfor %}
+
+{% include 'footer.html' %}

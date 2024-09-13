@@ -1,0 +1,37 @@
+
+{% include 'header.html' %}
+<br>
+<a href="{{ url_for('create_cliente') }}" class="btn btn-success">Ingresar un nuevo cliente</a>
+<br><br>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Identificación</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente[0] }}</td>
+                <td>{{ cliente[1] }}</td>
+                <td>{{ cliente[2] }}</td>
+                <td>{{ cliente[3] }}</td>
+                <td>{{ cliente[4] }}</td>
+                <td>
+                    <a class="btn btn-success" href="/admin/show_cliente/{{cliente[0]}}">Mostrar</a> |
+                    <a class="btn btn-warning" href="/admin/edit_cliente/{{cliente[0]}}">Editar</a> |
+                    <a onclick="return confirm('¿Desea eliminar?')" class="btn btn-danger" href="/admin/destroy_cliente/{{cliente[0]}}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+

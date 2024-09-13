@@ -1,0 +1,165 @@
+*{
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  
+  /* styles.css */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d1d1d1;
+  }
+  
+  
+  header {
+    width: 100%;
+    height: 100px;
+    background-color: #1a1919;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+  }
+  
+  
+  .logo {
+    width: 130px; /* ajusta el ancho del logo */
+    height: auto; /* mantiene la proporción del logo */
+    margin: 10px; /* agrega un margen para separar el logo del título */
+    float: left; /* hace que el logo flote a la izquierda */
+  }
+  nav a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    gap: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  nav a:hover{
+    transform: scale(1.1);
+    background-color: #333;
+  }
+  .btn-nav {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 8px; /* Increased padding for better touch area */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    min-width: 150px;
+    text-align: center;
+  }
+ 
+  .btn-nav:hover {
+    transform: scale(1.05);
+    background-color: #333;
+  }
+ 
+ header .content {
+   box-sizing: border-box;
+ }
+ 
+ .navegacion {
+   display: flex;
+   gap: 15px;
+   margin: 10px 0; /* Adjusted margin */
+ }
+ 
+  
+  
+  
+  
+  
+  
+  .links{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .links:hover{
+    color: red;
+    transition: 0.2s;
+  }
+  
+  
+  /* footer */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+    
+  .footer-left {
+    width: 50%;
+  }
+    
+  .footer-right {
+    width: 50%;
+    text-align: right;
+  }
+    
+  .footer-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    
+  .footer-left li {
+    margin-bottom: 10px;
+  }
+    
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+    
+  .footer-right li {
+    margin-right: 20px;
+  }
+    
+  .footer-right img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .Titutlo-Proceso{
+    scale: 300%;
+    padding: 200px;
+    border-radius: 100%;
+    height: 200px;
+    font-size: 10px;
+    position: relative;
+    top: -12px;
+    left: 30px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-item {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px;
+    align-items: center;
+    margin: 0 10%;
+  }
+  
+  
+  /* end footer */
+  
+  @media(min-width: 370px){
+    .container {
+      min-width: 50%;
+    }
+  }

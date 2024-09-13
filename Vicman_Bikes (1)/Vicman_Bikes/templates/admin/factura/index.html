@@ -1,0 +1,32 @@
+
+{% include 'header.html' %}
+<br>
+<a href="{{url_for('create_factura')}}" class="btn btn-success">Ingresar una nueva factura</a>
+<br><br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Id-factura</th>
+                <th>Fecha</th>
+                <th>Identificacion</th>
+                <th>Id-Vehiculo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for factura in facturas %}
+                <tr>
+                    <td>{{factura[0]}}</td>
+                    <td>{{factura[1]}}</td>
+                    <td>{{factura[2]}}</td>
+                    <td>{{factura[3]}}</td>
+                    <td><a class="btn btn-success" href="/admin/show_factura/{{factura[0]}}">Mostrar</a> |<a class="btn btn-warning" href="/admin/edit_factura/{{factura[0]}}">Editar</a> |
+                        <a onclick="return confirm('¿Desea eliminar?')" class="btn btn-danger" href="/admin/destroy_factura/{{factura[0]}}">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+           
+        </tbody>
+    </table>
+
+    {% include 'footer.html' %}

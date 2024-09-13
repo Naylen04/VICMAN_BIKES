@@ -1,0 +1,42 @@
+
+{% include 'header.html' %}
+<br>
+<a href="{{ url_for('create_vehiculo') }}" class="btn btn-success">Ingresar un nuevo vehículo</a>
+<br><br>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehiculo in vehiculos %}
+            <tr>
+                <td>{{ vehiculo[0] }}</td>
+                <td>
+                    {% if vehiculo[5] %}
+                        <img class="img-thumbnail" width="100" src="../uploads/{{vehiculo[5]}}" alt="">
+                    {% else %}
+                        No disponible
+                    {% endif %}
+                </td>
+                <td>{{ vehiculo[1] }}</td>
+                <td>{{ vehiculo[2] }}</td>
+                <td>{{ vehiculo[3] }}</td>
+                <td>
+                    <a class="btn btn-success" href="/admin/show_vehiculo/{{vehiculo[0]}}">Mostrar</a> |
+                    <a class="btn btn-warning" href="/admin/edit_vehiculo/{{vehiculo[0]}}">Editar</a> |
+                    <a onclick="return confirm('¿Desea eliminar?')" class="btn btn-danger" href="/admin/destroy_vehiculo/{{vehiculo[0]}}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}

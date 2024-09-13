@@ -1,0 +1,31 @@
+
+{% include 'header.html' %}
+<form method="post" action="/admin/store_categoria" enctype="multipart/form-data">
+    <br><br>
+    <div class="card">
+        <div class="card-header">
+            Categoria
+        </div>
+        <div class="card-body">
+            
+            <p class="card-text">
+                <div class="form-group">
+                    <label for="txtCategoria">Categoria:</label>
+                    <input id="txtCategoria" class="form-control" type="text" name="txtCategoria" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <a href="{{url_for('index_categoria')}}" class="btn btn-primary">Regresar</a>
+                </div>
+                
+            
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'footer.html' %}

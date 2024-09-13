@@ -1,0 +1,36 @@
+
+{% include 'header.html' %}
+<form method="post" action="/admin/store_factura" enctype="multipart/form-data">
+    <br><br>
+    <div class="card">
+        <div class="card-header">
+            Crear Factura
+        </div>
+        <div class="card-body">
+            
+            <p class="card-text">
+                
+                <div class="form-group">
+                    <label for="txtIdentificacion">Identificacion:</label>
+                    <input id="txtIdentificacion" class="form-control" type="text" name="txtIdentificacion" required>
+                </div>
+                <div class="form-group">
+                    <label for="txtIdvehiculo">ID Vehiculo:</label>
+                    <input id="txtIdvehiculo" class="form-control" type="text" name="txtIdvehiculo" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Agregar">
+                    <a href="{{url_for('index_factura')}}" class="btn btn-primary">Regresar</a>
+                </div>
+                
+            
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'footer.html' %}
